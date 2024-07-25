@@ -14,7 +14,8 @@ export default function Home() {
   const [theme, setTheme] = useState("light");
   const [error, setError] = useState(null);
 
-  const API_KEY = "AIzaSyCtV3OXq55_088I_vBKlsiC29drD_vH6eQ";
+  
+  const API_KEY = process.env.NEXT_PUBLIC_API_KEY;
   const MODEL_NAME = "gemini-1.0-pro-001";
 
   const genAI = new GoogleGenerativeAI(API_KEY);
