@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import {
   GoogleGenerativeAI,
   HarmCategory,
@@ -16,8 +16,9 @@ export default function Home() {
   const API_KEY = process.env.NEXT_PUBLIC_API_KEY;
   const MODEL_NAME = "gemini-1.0-pro-001";
 
+  const chatContainerRef = useRef(null); // Reference for chat container
 
-  console.log("API_KEY:", API_KEY); // Debugging: Check if API key is being accessed
+  console.log("API_KEY:", API_KEY); // Debugging: Check if API key is being access
 
   const genAI = new GoogleGenerativeAI(API_KEY);
 
@@ -148,6 +149,12 @@ export default function Home() {
 
   const { primary, secondary, accent, text } = getThemeColor();
 
+  useEffect(() => {
+    if (chatContainerRef.current) {
+      chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
+    }
+  }, [messages]);
+
   return (
     <div className={`flex flex-col h-screen ${primary}`}>
       <div className="flex justify-between items-center p-4 border-b border-gray-300">
@@ -167,7 +174,7 @@ export default function Home() {
           </select>
         </div>
       </div>
-      <div className={`flex-1 overflow-y-auto p-4 ${secondary}`}>
+      <div ref={chatContainerRef} className={`flex-1 overflow-y-auto p-4 ${secondary}`}>
         {messages.map((msg, index) => (
           <div
             key={index}
@@ -206,7 +213,7 @@ export default function Home() {
         ))}
         {error && <div className="text-red-500 text-sm mb-4">{error}</div>}
       </div>
-      <div className="fixed bottom-0 left-0 w-full flex items-center p-4">
+      <div className=" bottom-0 left-0 w-full flex items-center p-4">
         <input
           type="text"
           placeholder="Type your message..."
