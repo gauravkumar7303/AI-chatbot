@@ -16,6 +16,9 @@ export default function Home() {
   const API_KEY = process.env.NEXT_PUBLIC_API_KEY;
   const MODEL_NAME = "gemini-1.0-pro-001";
 
+
+  console.log("API_KEY:", API_KEY); // Debugging: Check if API key is being accessed
+
   const genAI = new GoogleGenerativeAI(API_KEY);
 
   const generationConfig = {
