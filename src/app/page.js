@@ -1,4 +1,3 @@
-// app/page.js
 "use client";
 import { useEffect, useState } from "react";
 import {
@@ -14,7 +13,6 @@ export default function Home() {
   const [theme, setTheme] = useState("light");
   const [error, setError] = useState(null);
 
-  
   const API_KEY = process.env.NEXT_PUBLIC_API_KEY;
   const MODEL_NAME = "gemini-1.0-pro-001";
 
@@ -224,3 +222,4 @@ export default function Home() {
     </div>
   );
 }
+
