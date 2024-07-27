@@ -3,29 +3,29 @@
 @tailwind utilities;
 /* styles/globals.css */
 
-.user-message {
-  background-color: #dcf8c6;
-  text-align: right;
-  padding: 10px;
-  border-radius: 10px;
-  margin: 10px;
+.main-container {
+  width: 800px;
 }
 
-.bot-message {
-  background-color: #f1f0f0;
-  text-align: left;
-  padding: 10px;
-  border-radius: 10px;
-  margin: 10px;
+/* Responsive design */
+
+/* Large screens (desktops) */
+@media only screen and (min-width: 1200px) {
+  .main-container {
+    width: 800px;
+  }
 }
 
-input {
-  width: 80%;
-  padding: 10px;
-  margin: 10px;
+/* Medium screens (tablets) */
+@media only screen and (min-width: 900px) and (max-width: 1199px) {
+  .main-container {
+    width: 500px;
+  }
 }
 
-button {
-  padding: 10px;
-  margin: 10px;
+/* Small screens (mobiles) */
+@media only screen and (max-width: 899px) {
+  .main-container {
+    width: 350px;
+  }
 }
