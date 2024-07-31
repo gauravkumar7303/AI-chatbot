@@ -20,6 +20,3 @@ The Elderly Advisor Chatbot provides valuable advice and support for elderly car
 1. Next.js: Frontend framework.
 2. Gemini AI API: Chatbot functionality.
 3. Tailwind CSS: Styling and design.
-
-## **License**
-- This project is licensed under the MIT License.
