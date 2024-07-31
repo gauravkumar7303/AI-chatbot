@@ -211,7 +211,7 @@ export default function Home() {
             <option value="dark">Dark</option>
           </select>
           <a
-            href="https://chatbot-swart-nine.vercel.app/Documentation"
+            href="https://ai-chatbot-orpin-rho.vercel.app/Documentation"
             target="_blank"
             rel="noopener noreferrer"
             className="p-1 rounded-md border-2 text-black-600 bg-white h-9 w-16"
@@ -227,7 +227,7 @@ export default function Home() {
                 <h1 className="font-bold text-3xl mb-8">Welcome to the Elderly Care Advisor Chatbot!</h1>
                 <p>This chatbot is designed to provide assistance and information about elderly care. You can ask about services, caregivers, financial assistance, signs of elder abuse, and more.</p>
 
-                <p> For the addtional information check the Documentation for the Documentation <a href="https://chatbot-swart-nine.vercel.app/Documentation" className="underline text-blue">Click Here.</a> <br />Here are some common questions:</p>
+                <p> For the addtional information check the Documentation for the Documentation <a href="https://ai-chatbot-orpin-rho.vercel.app/Documentation" className="underline text-blue">Click Here.</a> <br />Here are some common questions:</p>
               </div>
               <div className="flex flex-wrap">
                 <div className="mt-2 space-y-2">
