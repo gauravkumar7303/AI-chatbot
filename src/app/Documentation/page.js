@@ -3,7 +3,8 @@ import React from "react";
 export default function Documentation() {
   return (
     <>
-      <section id="project-overview" className="mb-10">
+      <header className="bg-orange-400 flex items-center justify-center h-20"><h1 className="text-3xl text-white text-center">Eldeary Advisor Chatbot Documentation</h1></header>
+      <section id="project-overview" className="mb-10 ">
         <div className="p-8 bg-white rounded-lg shadow-md">
           <h1 className="text-3xl font-bold mb-6">Project Overview</h1>
           <h2 className="text-2xl font-semibold mb-4">Elderly Advisor Chatbot</h2>
@@ -20,7 +21,7 @@ export default function Documentation() {
         </div>
       </section>
 
-      <section id="features" className="mb-10">
+      <section id="features" className="mb-10 ">
         <div className="p-8 bg-white rounded-lg shadow-md">
           <h1 className="text-3xl font-bold mb-6">Features</h1>
           <p className="mb-4 text-lg">
@@ -110,42 +111,53 @@ export default function Documentation() {
               <p className="ml-4 text-lg">
                 Open your terminal and clone the repository using the following command:
               </p>
-              <pre className="bg-gray-100 p-4 rounded mt-2">
-                <code>git clone https://github.com/gauravkumar7303/chatbot.git</code>
-              </pre>
+              <div className="overflow-x-auto mt-2">
+                <pre className="bg-gray-100 p-4 rounded">
+                  <code>git clone https://github.com/gauravkumar7303/chatbot.git</code>
+                </pre>
+              </div>
             </li>
             <li className="mb-4 text-lg">
               <h2 className="text-xl font-semibold">Navigate to the Project Directory</h2>
               <p className="ml-4 text-lg">Change into the project directory:</p>
-              <pre className="bg-gray-100 p-4 rounded mt-2">
-                <code>cd chatbot</code>
-              </pre>
+              <div className="overflow-x-auto mt-2">
+                <pre className="bg-gray-100 p-4 rounded">
+                  <code>cd chatbot</code>
+                </pre>
+              </div>
             </li>
             <li className="mb-4 text-lg">
               <h2 className="text-xl font-semibold">Install Dependencies</h2>
               <p className="ml-4 text-lg">Install the necessary dependencies using npm:</p>
-              <pre className="bg-gray-100 p-4 rounded mt-2">
-                <code>npm install</code>
-              </pre>
+              <div className="overflow-x-auto mt-2">
+                <pre className="bg-gray-100 p-4 rounded">
+                  <code>npm install</code>
+                </pre>
+              </div>
             </li>
             <li className="mb-4">
               <h2 className="text-xl font-semibold">Run the Application</h2>
               <p className="ml-4">Start the development server:</p>
-              <pre className="bg-gray-100 p-4 rounded mt-2">
-                <code>npm run dev</code>
-              </pre>
+              <div className="overflow-x-auto mt-2">
+                <pre className="bg-gray-100 p-4 rounded">
+                  <code>npm run dev</code>
+                </pre>
+              </div>
               <p className="ml-4 text-lg">Open your browser and navigate to <a href="http://localhost:3000" className="text-blue-600 underline">http://localhost:3000</a></p>
             </li>
             <li className="mb-4 text-lg">
               <h2 className="text-xl font-semibold">Navigate to Documentation</h2>
               <p className="ml-4 text-lg">To access the documentation, click on the "Documentation" link in the navigation bar or go to:</p>
-              <pre className="bg-gray-100 p-4 rounded mt-2">
-                <code>http://localhost:3000/documentation</code>
-              </pre>
+              <div className="overflow-x-auto mt-2">
+                <pre className="bg-gray-100 p-4 rounded">
+                  <code>http://localhost:3000/documentation</code>
+                </pre>
+              </div>
             </li>
           </ol>
         </div>
       </section>
+
 
       <section id="usage-instructions" className="mb-10">
         <div className="p-8 bg-white rounded-lg shadow-md">
@@ -255,9 +267,11 @@ export default function Documentation() {
             <li className="mb-2">Create a `.env` file in the root directory of your project and add your API key:</li>
           </ol>
 
-          <pre className="bg-gray-200 p-4 rounded mb-6">
-            <code>GEMINI_API_KEY=your_api_key_here</code>
-          </pre>
+          <div className="overflow-x-auto mt-2">
+            <pre className="bg-gray-200 p-4 rounded mb-6">
+              <code>GEMINI_API_KEY=your_api_key_here</code>
+            </pre>
+          </div>
 
           <h2 className="text-2xl font-bold mt-6 mb-4">Integration</h2>
           <p className="text-lg">Here is how the Gemini AI API is integrated into the chatbot:</p>
@@ -267,12 +281,10 @@ export default function Documentation() {
               <strong>API Request:</strong>
               <p className="ml-6 text-lg">When a user submits a query, an API request is sent to the Gemini AI endpoint with the user's input and the API key.</p>
             </li>
-
             <li className="mb-2">
               <strong>Processing Response:</strong>
               <p className="ml-6 text-lg">The API processes the input using natural language processing (NLP) and machine learning algorithms to generate a human-like response.</p>
             </li>
-
             <li className="mb-2">
               <strong>Displaying Response:</strong>
               <p className="ml-6 text-lg">The generated response is sent back to the chatbot interface and displayed to the user in a conversational format.</p>
@@ -282,36 +294,61 @@ export default function Documentation() {
           <h2 className="text-2xl font-bold mt-6 mb-4">Example Code</h2>
           <p className="text-lg">Here is a simplified example of how to make an API request to the Gemini AI endpoint:</p>
 
-          <pre className="bg-gray-200 p-4 rounded mb-6">
-            <code>{`
-           import axios from 'axios';
+          <div className="overflow-x-auto mt-2">
+            <pre className="bg-gray-200 p-4 rounded mb-6">
+              <code>{`
+const handleSendMessage = async () => {
+  try {
+    const userMessage = {
+      text: userInput,
+      role: "user",
+      timestamp: new Date(),
+    };
 
-          const getGeminiAIResponse = async (userInput) => {
-          const apiKey = process.env.GEMINI_API_KEY;
-          const endpoint = 'https://api.gemini.com/v1/ai-response';
+    setMessages((prevMessages) => [...prevMessages, userMessage]);
+    setUserInput("");
+    setShowWelcome(false);
 
-          try {
-            const response = await axios.post(endpoint, {
-             input: userInput,
-             apiKey: apiKey,
-            });
-
-         return response.data;
-        } catch (error) {
-         console.error('Error fetching Gemini AI response:', error);
-          return { error: 'Unable to fetch response from Gemini AI' };
-        }
-      };
-
-       export default getGeminiAIResponse;
+    if (predefinedResponses[userInput]) {
+      setIsTyping(true);
+      setTimeout(() => {
+        const botMessage = {
+          text: predefinedResponses[userInput],
+          role: "bot",
+          timestamp: new Date(),
+        };
+        setMessages((prevMessages) => [...prevMessages, botMessage]);
+        setIsTyping(false);
+      }, 2000); // Simulate typing delay
+    } else if (chat) {
+      setIsTyping(true);
+      const result = await chat.sendMessage(userInput);
+      setTimeout(async () => {
+        const botMessage = {
+          text: await result.response.text(),
+          role: "bot",
+          timestamp: new Date(),
+        };
+        setMessages((prevMessages) => [...prevMessages, botMessage]);
+        setIsTyping(false);
+      }, 2000); // Simulate typing delay
+    } else {
+      setError("Chat is not initialized");
+    }
+  } catch (error) {
+    setError("Failed to send message: " + error.message);
+  }
+};
         `}</code>
-          </pre>
+            </pre>
+          </div>
 
           <p className="text-lg">This code demonstrates how to send a user's input to the Gemini AI API and receive a response. The response is then used to provide an answer to the user within the chatbot interface.</p>
 
           <p className="mt-4 text-lg">With this integration, the Elderly Advisor Chatbot can effectively understand and respond to user queries, offering valuable advice and information on elderly care.</p>
         </div>
       </section>
+
 
       <section id="predefined-responses" className="mb-10">
         <div className="p-8 bg-white rounded-lg shadow-md">
@@ -384,21 +421,23 @@ export default function Documentation() {
           <p>To update or add new responses:</p>
 
           <ol className="list-decimal list-inside mt-4">
-            <li><strong>Locate the Responses File:</strong> The predefined responses are managed in the `predefined-responses` component file located at:
-              <pre className="bg-gray-100 p-2 rounded"><code>// app/documentation/predefined-responses/page.js</code></pre>
+            <li>
+              <strong>Locate the Responses File:</strong> The predefined responses are managed in the `predefined-responses` component file located at:
+              <div className="overflow-x-auto mt-2">
+                <pre className="bg-gray-100 p-2 rounded"><code>// app/documentation/predefined-responses/page.js</code></pre>
+              </div>
             </li>
-
             <li><strong>Edit Responses:</strong> Open the `page.js` file and modify the responses within the element. Update the text to reflect new or revised information.</li>
-
             <li><strong>Example Code:</strong>
-              <pre className="bg-gray-100 p-2 rounded"><code>
-                &lt;li className="mb-2"&gt;
-                &lt;strong&gt;How can I find reliable elderly care services?&lt;/strong&gt;
-                &lt;p className="ml-6"&gt;Search for services through local agencies, online directories, and recommendations from healthcare professionals.&lt;/p&gt;
-                &lt;/li&gt;
-              </code></pre>
+              <div className="overflow-x-auto mt-2">
+                <pre className="bg-gray-100 p-2 rounded w-full"><code>
+                  &lt;li className="mb-2"&gt;
+                  &lt;strong&gt;How can I find reliable elderly care services?&lt;/strong&gt;
+                  &lt;p className="ml-6"&gt;Search for services through local agencies, online directories, <br />and recommendations from healthcare professionals.&lt;/p&gt;
+                  &lt;/li&gt;
+                </code></pre>
+              </div>
             </li>
-
             <li><strong>Testing:</strong> Test the chatbot to ensure that the updated responses display correctly and provide accurate information.</li>
           </ol>
 
@@ -406,27 +445,29 @@ export default function Documentation() {
           <p>To adjust the chatbot’s design:</p>
 
           <ol className="list-decimal list-inside mt-4">
-            <li><strong>Locate the CSS File:</strong> Style changes are typically made in the CSS files. The main stylesheet is located at:
-              <pre className="bg-gray-100 p-2 rounded"><code>// styles/global.css</code></pre>
+            <li>
+              <strong>Locate the CSS File:</strong> Style changes are typically made in the CSS files. The main stylesheet is located at:
+              <div className="overflow-x-auto mt-2">
+                <pre className="bg-gray-100 p-2 rounded"><code>// styles/global.css</code></pre>
+              </div>
             </li>
-
             <li><strong>Edit Styles:</strong> Open `global.css` and modify the styles according to your design preferences. You can adjust colors, fonts, and layout to match your desired look.</li>
-
             <li><strong>Example Code:</strong>
-              <pre className="bg-gray-100 p-2 rounded"><code>
-                .chatbot-container {'{'}
-                background-color: #f4f4f4;
-                border-radius: 8px;
-                padding: 16px;
-                {'}'}
+              <div className="overflow-x-auto mt-2">
+                <pre className="bg-gray-100 p-2 rounded w-full"><code>
+                  .chatbot-container {'{'}
+                  background-color: #f4f4f4;
+                  border-radius: 8px;
+                  padding: 16px;
+                  {'}'}
 
-                .chatbot-message {'{'}
-                font-size: 16px;
-                color: #333;
-                {'}'}
-              </code></pre>
+                  .chatbot-message {'{'}
+                  font-size: 16px;
+                  color: #333;
+                  {'}'}
+                </code></pre>
+              </div>
             </li>
-
             <li><strong>Testing:</strong> Ensure to review the chatbot in different devices and screen sizes to maintain responsiveness and usability.</li>
           </ol>
 
@@ -434,23 +475,25 @@ export default function Documentation() {
           <p>To modify the functionality of the chatbot:</p>
 
           <ol className="list-decimal list-inside mt-4">
-            <li><strong>Locate the Functionality File:</strong> The core chatbot logic is managed in the component file:
-              <pre className="bg-gray-100 p-2 rounded"><code>// components/Chatbot.js</code></pre>
+            <li>
+              <strong>Locate the Functionality File:</strong> The core chatbot logic is managed in the component file:
+              <div className="overflow-x-auto mt-2">
+                <pre className="bg-gray-100 p-2 rounded"><code>// components/Chatbot.js</code></pre>
+              </div>
             </li>
-
             <li><strong>Edit Logic:</strong> Open `Chatbot.js` and update the JavaScript functions or methods that handle user inputs and chatbot responses.</li>
-
             <li><strong>Example Code:</strong>
-              <pre className="bg-gray-100 p-2 rounded"><code>
-                const handleUserInput = (input) =&gt; {'{'}
-                if (input.includes('services')) {'{'}
-                return 'Here are the services we offer...';
-                {'}'}
+              <div className="overflow-x-auto mt-2">
+                <pre className="bg-gray-100 p-2 rounded w-full"><code>
+                  const handleUserInput = (input) =&gt; {'{'}
+                  if (input.includes('services')) {'{'}
+                  return 'Here are the services we offer...';
+                  {'}'}
   // Add additional logic as needed
-                {'}'};
-              </code></pre>
+                  {'}'};
+                </code></pre>
+              </div>
             </li>
-
             <li><strong>Testing:</strong> Test the chatbot interactions to ensure the functionality behaves as expected and addresses various user inputs correctly.</li>
           </ol>
 
@@ -459,20 +502,19 @@ export default function Documentation() {
 
           <ol className="list-decimal list-inside mt-4">
             <li><strong>Identify the Feature:</strong> Determine what new feature or capability you want to add (e.g., additional languages, integration with external APIs).</li>
-
             <li><strong>Implement Feature:</strong> Add the necessary code and dependencies. This may involve updating both frontend and backend components.</li>
-
             <li><strong>Example Code:</strong>
-              <pre className="bg-gray-100 p-2 rounded"><code>"
-                import axios from 'axios';
+              <div className="overflow-x-auto mt-2">
+                <pre className="bg-gray-100 p-2 rounded"><code>
+                  import axios from 'axios';
 
-                const fetchAdditionalInfo = async (query) =&gt; {'{'}
-                const response = await axios.get(`/api/info?query=${`query`}`);
-                return response.data;
-                {'}'};
-              </code></pre>
+                  const fetchAdditionalInfo = async (query) =&gt; {'{'}
+                  const response = await axios.get(`/api/info?query=${`query`}`);
+                  return response.data;
+                  {'}'};
+                </code></pre>
+              </div>
             </li>
-
             <li><strong>Testing:</strong> Ensure that new features integrate smoothly and do not disrupt existing functionality. Test thoroughly before deploying.</li>
           </ol>
 
@@ -481,9 +523,7 @@ export default function Documentation() {
 
           <ol className="list-decimal list-inside mt-4">
             <li><strong>Update Deployment Settings:</strong> Adjust the deployment configuration files if needed (e.g., `vercel.json` for Vercel deployments).</li>
-
             <li><strong>Deploy Changes:</strong> Commit your changes to version control and deploy the updated chatbot to your hosting platform.</li>
-
             <li><strong>Testing:</strong> Verify the deployed version to ensure all customizations are live and functioning as intended.</li>
           </ol>
 
@@ -492,166 +532,166 @@ export default function Documentation() {
       </section>
 
       <section id="deployment-instructions" className="mb-10">
-      <div className="p-8 bg-white rounded-lg shadow-md">
-      <h1 className="text-3xl font-bold mb-6">Deployment Instructions:</h1>
-      
-      <p>Deploying your Elderly Advisor Chatbot on Vercel involves a series of steps to ensure a smooth deployment process. Follow these instructions to deploy your chatbot effectively.</p>
-      
-      <h2 className="text-2xl font-semibold mt-6 mb-4">1. Prepare Your Project for Deployment</h2>
-      <p>Before deploying, ensure your project is ready by following these steps:</p>
-      
-      <ol className="list-decimal list-inside mt-4">
-        <li><strong>Ensure All Dependencies Are Installed:</strong> Verify that all necessary dependencies are included in your `package.json` file. Run:
-          <pre className="bg-gray-100 p-2 rounded"><code>npm install</code></pre>
-        </li>
-        
-        <li><strong>Build Your Project:</strong> Generate the production build of your application by running:
-          <pre className="bg-gray-100 p-2 rounded"><code>npm run build</code></pre>
-        </li>
-        
-        <li><strong>Configure Environment Variables:</strong> Set up any environment variables required for your project. Create a `.env` file in your project root if needed.</li>
-      </ol>
-      
-      <h2 className="text-2xl font-semibold mt-6 mb-4">2. Set Up a Vercel Account</h2>
-      <p>If you don't have a Vercel account, sign up at <a href="https://vercel.com" className="text-blue-500 underline">Vercel</a>.</p>
-      
-      <h2 className="text-2xl font-semibold mt-6 mb-4">3. Deploy Your Project</h2>
-      <p>Follow these steps to deploy your project on Vercel:</p>
-      
-      <ol className="list-decimal list-inside mt-4">
-        <li><strong>Install Vercel CLI:</strong> If you haven't installed the Vercel CLI, do so by running:
-          <pre className="bg-gray-100 p-2 rounded"><code>npm install -g vercel</code></pre>
-        </li>
-        
-        <li><strong>Log In to Vercel:</strong> Authenticate your Vercel account using the CLI:
-          <pre className="bg-gray-100 p-2 rounded"><code>vercel login</code></pre>
-        </li>
-        
-        <li><strong>Deploy Your Project:</strong> Deploy your project by running:
-          <pre className="bg-gray-100 p-2 rounded"><code>vercel</code></pre>
-          Follow the prompts to configure your deployment settings. Vercel will provide a URL for your live project.</li>
-        
-        <li><strong>Configure Deployment Settings:</strong> If needed, adjust your deployment settings on the Vercel dashboard. You can manage environment variables, custom domains, and other settings.</li>
-      </ol>
-      
-      <h2 className="text-2xl font-semibold mt-6 mb-4">4. Verify Deployment</h2>
-      <p>After deployment, verify that your chatbot is functioning correctly by visiting the provided URL. Test all functionalities to ensure everything is working as expected.</p>
-      
-      <h2 className="text-2xl font-semibold mt-6 mb-4">5. Update Deployment</h2>
-      <p>If you make further changes to your project:</p>
-      
-      <ol className="list-decimal list-inside mt-4">
-        <li><strong>Commit Changes:</strong> Save your changes to version control:</li>
-          <pre className="bg-gray-100 p-2 rounded"><code>git add .</code></pre>
-          <pre className="bg-gray-100 p-2 rounded"><code>git commit -m "Update deployment"</code></pre>
-        
-        <li><strong>Push Changes:</strong> Push changes to your remote repository:</li>
-          <pre className="bg-gray-100 p-2 rounded"><code>git push</code></pre>
-        
-        <li><strong>Redeploy:</strong> Redeploy your updated project to Vercel:</li>
-          <pre className="bg-gray-100 p-2 rounded"><code>vercel --prod</code></pre>
-      </ol>
-      
-      <p>By following these steps, you can effectively deploy and manage your Elderly Advisor Chatbot on Vercel. For further customization and troubleshooting, refer to Vercel's documentation or support resources.</p>
-    </div>
+        <div className="p-8 bg-white rounded-lg shadow-md">
+          <h1 className="text-3xl font-bold mb-6">Deployment Instructions:</h1>
+
+          <p>Deploying your Elderly Advisor Chatbot on Vercel involves a series of steps to ensure a smooth deployment process. Follow these instructions to deploy your chatbot effectively.</p>
+
+          <h2 className="text-2xl font-semibold mt-6 mb-4">1. Prepare Your Project for Deployment</h2>
+          <p>Before deploying, ensure your project is ready by following these steps:</p>
+
+          <ol className="list-decimal list-inside mt-4">
+            <li><strong>Ensure All Dependencies Are Installed:</strong> Verify that all necessary dependencies are included in your `package.json` file. Run:
+              <pre className="bg-gray-100 p-2 rounded"><code>npm install</code></pre>
+            </li>
+
+            <li><strong>Build Your Project:</strong> Generate the production build of your application by running:
+              <pre className="bg-gray-100 p-2 rounded"><code>npm run build</code></pre>
+            </li>
+
+            <li><strong>Configure Environment Variables:</strong> Set up any environment variables required for your project. Create a `.env` file in your project root if needed.</li>
+          </ol>
+
+          <h2 className="text-2xl font-semibold mt-6 mb-4">2. Set Up a Vercel Account</h2>
+          <p>If you don't have a Vercel account, sign up at <a href="https://vercel.com" className="text-blue-500 underline">Vercel</a>.</p>
+
+          <h2 className="text-2xl font-semibold mt-6 mb-4">3. Deploy Your Project</h2>
+          <p>Follow these steps to deploy your project on Vercel:</p>
+
+          <ol className="list-decimal list-inside mt-4">
+            <li><strong>Install Vercel CLI:</strong> If you haven't installed the Vercel CLI, do so by running:
+              <pre className="bg-gray-100 p-2 rounded"><code>npm install -g vercel</code></pre>
+            </li>
+
+            <li><strong>Log In to Vercel:</strong> Authenticate your Vercel account using the CLI:
+              <pre className="bg-gray-100 p-2 rounded"><code>vercel login</code></pre>
+            </li>
+
+            <li><strong>Deploy Your Project:</strong> Deploy your project by running:
+              <pre className="bg-gray-100 p-2 rounded"><code>vercel</code></pre>
+              Follow the prompts to configure your deployment settings. Vercel will provide a URL for your live project.</li>
+
+            <li><strong>Configure Deployment Settings:</strong> If needed, adjust your deployment settings on the Vercel dashboard. You can manage environment variables, custom domains, and other settings.</li>
+          </ol>
+
+          <h2 className="text-2xl font-semibold mt-6 mb-4">4. Verify Deployment</h2>
+          <p>After deployment, verify that your chatbot is functioning correctly by visiting the provided URL. Test all functionalities to ensure everything is working as expected.</p>
+
+          <h2 className="text-2xl font-semibold mt-6 mb-4">5. Update Deployment</h2>
+          <p>If you make further changes to your project:</p>
+
+          <ol className="list-decimal list-inside mt-4">
+            <li><strong>Commit Changes:</strong> Save your changes to version control:</li>
+            <pre className="bg-gray-100 p-2 rounded"><code>git add .</code></pre>
+            <pre className="bg-gray-100 p-2 rounded"><code>git commit -m "Update deployment"</code></pre>
+
+            <li><strong>Push Changes:</strong> Push changes to your remote repository:</li>
+            <pre className="bg-gray-100 p-2 rounded"><code>git push</code></pre>
+
+            <li><strong>Redeploy:</strong> Redeploy your updated project to Vercel:</li>
+            <pre className="bg-gray-100 p-2 rounded"><code>vercel --prod</code></pre>
+          </ol>
+
+          <p>By following these steps, you can effectively deploy and manage your Elderly Advisor Chatbot on Vercel. For further customization and troubleshooting, refer to Vercel's documentation or support resources.</p>
+        </div>
       </section>
 
       <section id="troubleshooting" className="mb-10">
-      <div  className="p-8 bg-white rounded-lg shadow-md">
-      <h1 className="text-3xl font-bold mb-6">Troubleshooting:</h1>
-      
-      <p>If you encounter issues with your Elderly Advisor Chatbot, this section provides solutions to common problems. Follow these troubleshooting steps to resolve issues effectively.</p>
-      
-      <h2 className="text-2xl font-semibold mt-6 mb-4">1. Chatbot Not Responding</h2>
-      <p>If the chatbot is not responding to user inputs, consider the following solutions:</p>
-      
-      <ol className="list-decimal list-inside mt-4">
-        <li><strong>Check API Connectivity:</strong> Ensure that the API you are using (e.g., Gemini AI API) is reachable. Verify your API keys and network connectivity.</li>
-        
-        <li><strong>Review Console Errors:</strong> Open the browser's developer console and look for any error messages that might indicate what’s wrong.</li>
-        
-        <li><strong>Verify Code Implementation:</strong> Ensure that the chatbot logic is correctly implemented in the `Chatbot.js` file. Check for any syntax errors or logic issues.</li>
-        
-        <li><strong>Inspect Network Requests:</strong> Use browser developer tools to check if network requests are being sent and received correctly. Look for failed requests or error responses.</li>
-      </ol>
-      
-      <h2 className="text-2xl font-semibold mt-6 mb-4">2. Incorrect or Outdated Responses</h2>
-      <p>If the chatbot is providing incorrect or outdated information:</p>
-      
-      <ol className="list-decimal list-inside mt-4">
-        <li><strong>Update Predefined Responses:</strong> Check the `predefined-responses/page.js` file and ensure that the responses are accurate and up to date.</li>
-        
-        <li><strong>Refresh the Cache:</strong> Clear the browser cache and refresh the page to ensure that the latest changes are being loaded.</li>
-        
-        <li><strong>Review Response Logic:</strong> Verify that the logic for generating responses in `Chatbot.js` is functioning as expected. Make sure it handles different user inputs correctly.</li>
-      </ol>
-      
-      <h2 className="text-2xl font-semibold mt-6 mb-4">3. Deployment Issues</h2>
-      <p>If you encounter problems during deployment:</p>
-      
-      <ol className="list-decimal list-inside mt-4">
-        <li><strong>Check Deployment Logs:</strong> Review the deployment logs on Vercel for any error messages or issues that occurred during deployment.</li>
-        
-        <li><strong>Verify Configuration:</strong> Ensure that your deployment settings, such as environment variables and build configurations, are correctly set up.</li>
-        
-        <li><strong>Resolve Build Errors:</strong> If the build fails, check the build logs for errors. Resolve any issues related to missing dependencies or build scripts.</li>
-        
-        <li><strong>Re-deploy:</strong> After resolving the issues, redeploy your project to Vercel to apply the fixes.</li>
-      </ol>
-      
-      <h2 className="text-2xl font-semibold mt-6 mb-4">4. Styling and Layout Problems</h2>
-      <p>If there are issues with the chatbot’s styling or layout:</p>
-      
-      <ol className="list-decimal list-inside mt-4">
-        <li><strong>Inspect CSS Files:</strong> Verify the styles in `global.css` or other relevant CSS files. Ensure that styles are applied correctly and there are no conflicts.</li>
-        
-        <li><strong>Test Responsiveness:</strong> Check how the chatbot looks on different screen sizes and devices. Ensure that the layout is responsive and works well on all devices.</li>
-        
-        <li><strong>Review HTML Structure:</strong> Ensure that the HTML structure of the chatbot component is correct and aligns with the styling applied.</li>
-      </ol>
-      
-      <h2 className="text-2xl font-semibold mt-6 mb-4">5. API Integration Issues</h2>
-      <p>If there are issues with API integration:</p>
-      
-      <ol className="list-decimal list-inside mt-4">
-        <li><strong>Verify API Key:</strong> Ensure that the API key is correctly set in your environment variables and matches what is required by the API provider.</li>
-        
-        <li><strong>Check API Documentation:</strong> Review the API documentation for any changes or updates that might affect your integration.</li>
-        
-        <li><strong>Inspect API Requests:</strong> Use developer tools to monitor API requests and responses. Look for issues such as incorrect endpoints or authentication errors.</li>
-      </ol>
-      
-      <p>If you need further assistance, consult the API provider’s support resources or seek help from the development community.</p>
-    </div>
+        <div className="p-8 bg-white rounded-lg shadow-md">
+          <h1 className="text-3xl font-bold mb-6">Troubleshooting:</h1>
+
+          <p>If you encounter issues with your Elderly Advisor Chatbot, this section provides solutions to common problems. Follow these troubleshooting steps to resolve issues effectively.</p>
+
+          <h2 className="text-2xl font-semibold mt-6 mb-4">1. Chatbot Not Responding</h2>
+          <p>If the chatbot is not responding to user inputs, consider the following solutions:</p>
+
+          <ol className="list-decimal list-inside mt-4">
+            <li><strong>Check API Connectivity:</strong> Ensure that the API you are using (e.g., Gemini AI API) is reachable. Verify your API keys and network connectivity.</li>
+
+            <li><strong>Review Console Errors:</strong> Open the browser's developer console and look for any error messages that might indicate what’s wrong.</li>
+
+            <li><strong>Verify Code Implementation:</strong> Ensure that the chatbot logic is correctly implemented in the `Chatbot.js` file. Check for any syntax errors or logic issues.</li>
+
+            <li><strong>Inspect Network Requests:</strong> Use browser developer tools to check if network requests are being sent and received correctly. Look for failed requests or error responses.</li>
+          </ol>
+
+          <h2 className="text-2xl font-semibold mt-6 mb-4">2. Incorrect or Outdated Responses</h2>
+          <p>If the chatbot is providing incorrect or outdated information:</p>
+
+          <ol className="list-decimal list-inside mt-4">
+            <li><strong>Update Predefined Responses:</strong> Check the `predefined-responses/page.js` file and ensure that the responses are accurate and up to date.</li>
+
+            <li><strong>Refresh the Cache:</strong> Clear the browser cache and refresh the page to ensure that the latest changes are being loaded.</li>
+
+            <li><strong>Review Response Logic:</strong> Verify that the logic for generating responses in `Chatbot.js` is functioning as expected. Make sure it handles different user inputs correctly.</li>
+          </ol>
+
+          <h2 className="text-2xl font-semibold mt-6 mb-4">3. Deployment Issues</h2>
+          <p>If you encounter problems during deployment:</p>
+
+          <ol className="list-decimal list-inside mt-4">
+            <li><strong>Check Deployment Logs:</strong> Review the deployment logs on Vercel for any error messages or issues that occurred during deployment.</li>
+
+            <li><strong>Verify Configuration:</strong> Ensure that your deployment settings, such as environment variables and build configurations, are correctly set up.</li>
+
+            <li><strong>Resolve Build Errors:</strong> If the build fails, check the build logs for errors. Resolve any issues related to missing dependencies or build scripts.</li>
+
+            <li><strong>Re-deploy:</strong> After resolving the issues, redeploy your project to Vercel to apply the fixes.</li>
+          </ol>
+
+          <h2 className="text-2xl font-semibold mt-6 mb-4">4. Styling and Layout Problems</h2>
+          <p>If there are issues with the chatbot’s styling or layout:</p>
+
+          <ol className="list-decimal list-inside mt-4">
+            <li><strong>Inspect CSS Files:</strong> Verify the styles in `global.css` or other relevant CSS files. Ensure that styles are applied correctly and there are no conflicts.</li>
+
+            <li><strong>Test Responsiveness:</strong> Check how the chatbot looks on different screen sizes and devices. Ensure that the layout is responsive and works well on all devices.</li>
+
+            <li><strong>Review HTML Structure:</strong> Ensure that the HTML structure of the chatbot component is correct and aligns with the styling applied.</li>
+          </ol>
+
+          <h2 className="text-2xl font-semibold mt-6 mb-4">5. API Integration Issues</h2>
+          <p>If there are issues with API integration:</p>
+
+          <ol className="list-decimal list-inside mt-4">
+            <li><strong>Verify API Key:</strong> Ensure that the API key is correctly set in your environment variables and matches what is required by the API provider.</li>
+
+            <li><strong>Check API Documentation:</strong> Review the API documentation for any changes or updates that might affect your integration.</li>
+
+            <li><strong>Inspect API Requests:</strong> Use developer tools to monitor API requests and responses. Look for issues such as incorrect endpoints or authentication errors.</li>
+          </ol>
+
+          <p>If you need further assistance, consult the API provider’s support resources or seek help from the development community.</p>
+        </div>
       </section>
 
       <section id="contact-information" className="mb-10">
-      <div className="p-8 bg-white rounded-lg shadow-md">
-      <h1 className="text-3xl font-bold mb-6">Contact Information:</h1>
-      
-      <p>If you need support or wish to contribute to the Elderly Advisor Chatbot project, please use the following contact methods:</p>
-      
-      <h2 className="text-2xl font-semibold mt-6 mb-4">1. GitHub Repository</h2>
-      <p>For support, contributions, or to report issues, please visit the project's GitHub repository:</p>
-      
-      <p><a href="https://github.com/your-username/your-repository" className="text-blue-500 underline">https://github.com/your-username/your-repository</a></p>
-      
-      <p>On GitHub, you can:</p>
-      
-      <ul className="list-disc list-inside mt-4">
-        <li><strong>Open Issues:</strong> Report bugs, request features, or ask questions.</li>
-        <li><strong>Submit Pull Requests:</strong> Contribute code improvements or new features.</li>
-        <li><strong>Review Code:</strong> View and review code changes and documentation updates.</li>
-        <li><strong>Discuss:</strong> Engage with other contributors and project maintainers.</li>
-      </ul>
-      
-      <h2 className="text-2xl font-semibold mt-6 mb-4">2. Direct Contact</h2>
-      <p>If you prefer direct contact or have specific queries, you can reach out to the project maintainer:</p>
-      
-      <p><strong>Email:</strong> <a href="mailto:your-email@example.com" className="text-blue-500 underline">your-email@example.com</a></p>
-      
-      <p>We appreciate your interest in the Elderly Advisor Chatbot project and look forward to your contributions and feedback!</p>
-    </div>
+        <div className="p-8 bg-white rounded-lg shadow-md">
+          <h1 className="text-3xl font-bold mb-6">Contact Information:</h1>
+
+          <p>If you need support or wish to contribute to the Elderly Advisor Chatbot project, please use the following contact methods:</p>
+
+          <h2 className="text-2xl font-semibold mt-6 mb-4">1. GitHub Repository</h2>
+          <p>For support, contributions, or to report issues, please visit the project's GitHub repository:</p>
+
+          <p><a href="https://github.com/your-username/your-repository" className="text-blue-500 underline">https://github.com/your-username/your-repository</a></p>
+
+          <p>On GitHub, you can:</p>
+
+          <ul className="list-disc list-inside mt-4">
+            <li><strong>Open Issues:</strong> Report bugs, request features, or ask questions.</li>
+            <li><strong>Submit Pull Requests:</strong> Contribute code improvements or new features.</li>
+            <li><strong>Review Code:</strong> View and review code changes and documentation updates.</li>
+            <li><strong>Discuss:</strong> Engage with other contributors and project maintainers.</li>
+          </ul>
+
+          <h2 className="text-2xl font-semibold mt-6 mb-4">2. Direct Contact</h2>
+          <p>If you prefer direct contact or have specific queries, you can reach out to the project maintainer:</p>
+
+          <p><strong>Email:</strong> <a href="mailto:gaurav.k7303@gmail.com" className="text-blue-500 underline">gaurav.k7303@gmail.com</a></p>
+
+          <p>We appreciate your interest in the Elderly Advisor Chatbot project and look forward to your contributions and feedback!</p>
+        </div>
       </section>
       {/* Add more sections here as per the documentation */}
     </>

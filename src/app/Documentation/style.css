@@ -1,0 +1,22 @@
+/* Responsive design */
+ section{
+  width: 100%;
+ }
+/* Large screens (desktops) */
+@media only screen and (min-width: 1200px) {
+    
+  }
+  
+  /* Medium screens (tablets) */
+  @media only screen and (min-width: 900px) and (max-width: 1199px) {
+    body{
+        max-width: 100%;
+      }
+  }
+  
+  /* Small screens (mobiles) */
+  @media only screen and (max-width: 899px) {
+    body{
+        max-width: 100%;
+      }
+  }
